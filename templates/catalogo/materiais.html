@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% load pagination %}
+
+{% block title %}
+    Relação de Materiais | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+          <div class="page-header">
+              <h2 class="text-center">Relação de Materiais</h2>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for material in object_list %}
+            {% include 'catalogo/_material.html' %}
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

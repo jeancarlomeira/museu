@@ -1,0 +1,80 @@
+<!-- Modal Pesquisa-->
+<div class="modal fade" id="searchModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Digite o Código ou a descrição do item.</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <div class="modal-body">
+        <form class="form-group" action="{% url 'pesquisa:pesquisa' %}" method="GET" value="{{request.GET.q}}">
+          <div class="input-group">
+            <input type="text" class="form-control" name="q" value="{{request.GET.q}}" placeholder="Pesquisar">
+          </div>
+          </p>
+          <div class="input-group-btn">
+            <button class="btn btn-primary" type="submit" name="submit" value="Search">Pesquisar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Colaborador-->
+<div class="modal fade" id="colaboradorModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Dados do Colaborador</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <strong>Colaborador: </strong>{{ material.colaborador }}</p>
+        <strong>Profissão: </strong>{{ colab.profissao }}</p>
+        <strong>Idade: </strong>{{ colab.idade }}</p>
+        <strong>Endereço: </strong>{{ colab.endereco }}</p>
+        <strong>Contato: </strong>{{ colab.contato }}</p>
+        <strong>Data do Termo: </strong>{{ colab.data_do_termo }}</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Artista-->
+<div class="modal fade" id="artistaModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Dados do Artista</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <strong>Artista: </strong>{{ material.artista }}</p>
+        <strong>Biografia: </strong>{{ art.biografia }}</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

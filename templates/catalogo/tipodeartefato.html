@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+
+
+{% block title %}
+    Tipo de Artefato | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+          <div class="page-header">
+              <h2 class="text-center">Tipos de Artefatos</h2>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for tipodeartefato in object_list %}
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <a><h5>{{ tipodeartefato.id }} - {{ tipodeartefato.nome }}</h5><p></a>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

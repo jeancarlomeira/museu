@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+
+
+{% block title %}
+    Ambientes | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+          <div class="page-header">
+              <h2 class="text-center">Ambientes</h2>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for ambientes in object_list %}
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <a><h5>{{ ambientes.id }} - {{ ambientes.nome }}</h5><p></a>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

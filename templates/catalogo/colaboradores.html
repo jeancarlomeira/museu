@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+
+
+{% block title %}
+    Relação de Colaboradores | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+          <div class="page-header">
+              <h2 class="text-center">Relação de Colaboradores</h2>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for colaborador in object_list %}
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <a href="{% url 'catalogo:colaborador' colaborador.slug %}"><h5>{{ colaborador.id }} - {{ colaborador.nome }}</h5><p></a>                
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

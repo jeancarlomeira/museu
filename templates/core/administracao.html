@@ -1,0 +1,115 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Administração | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+  <div class="page-header">
+      <h2 class="text-center">Administração</h2>
+  </div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#admin">Admin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#material">Material</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#colaborador">Colaborador</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#tipodeentrada">Tipo de Entrada</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#tipodeartefato">Tipo de Artefato</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#ambiente">Ambiente</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#artista">Artista</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane container active" id="admin">
+      <h3>Administração</h3>
+      <p>Área destinada à Manutenção do Site e restrita aos administradores.</p>
+    </div>
+    <div class="tab-pane container fade" id="material">
+      <h3>Materiais</h3>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_material_add' %}">Adicionar</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_material_changelist' %}">Editar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-pane container fade" id="colaborador">
+      <h3>Colaborador</h3>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_colaborador_add' %}">Adicionar</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_colaborador_changelist' %}">Editar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-pane container fade" id="tipodeentrada">
+      <h3>Tipo de Entrada</h3>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_tipodeentrada_add' %}">Adicionar</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_tipodeentrada_changelist' %}">Editar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-pane container fade" id="tipodeartefato">
+      <h3>Tipo de Artefato</h3>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_tipodeartefato_add' %}">Adicionar</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_tipodeartefato_changelist' %}">Editar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-pane container fade" id="ambiente">
+      <h3>Ambientes</h3>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_ambiente_add' %}">Adicionar</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_ambiente_changelist' %}">Editar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-pane container fade" id="artista">
+      <h3>Artista</h3>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_artista_add' %}">Adicionar</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'admin:catalogo_artista_changelist' %}">Editar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

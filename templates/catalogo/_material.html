@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td width="270">
+          <img src={{ material.image }} class="img-fluid" alt="Responsive image" width="250" height="180">
+      </td>
+      <td>
+        <a href="{% url 'catalogo:material' material.slug %}"><h4>{{ material.codigo_registro }} - {{ material.titulo }}</h4><p></a>
+        <strong>Tipo de Entrada: </strong>{{ material.tipo_de_entrada }}<p>
+        <strong>Tipo de Artefato: </strong>{{ material.tipo_de_artefato }}<p>
+        <strong>Ambiente: </strong>{{ material.ambiente }}<p>
+        <strong>Data da Catalogação: </strong>{{ material.data_da_catalogacao }}
+        <p>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Colaborador | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container-fluid">
+  <div class="container p-3 my-3 border">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="card">
+          <img src=https://pbs.twimg.com/profile_images/1081149776404590592/REI4-FCq_400x400.jpg class="img-fluid" alt="Responsive image" width="150" height="140">
+        </div>
+      </div>
+      <div class="col-sm-5">
+        </p>
+        UNIVERSIDADE FEDERAL DE CAMPINA GRANDE</P>
+        CENTRO DE EDUCAÇÃO E SAÚDE</P>
+        MUSEU DO HOMEM DO CURIMATAÚ
+      </div>
+      <div class="col-sm-5 align-self-center text-center">
+        <div class="card">
+          <h4><strong>COLABORADOR</strong></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <strong>Detalhes</strong>
+          </div>
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-sm">
+        <tbody>
+          <tr>
+            <td>
+                <strong>Colaborador:</strong> {{ colaborador.nome }}</p>
+                <strong>Idade: </strong>{{ colaborador.idade }}</p>
+                <strong>Profissão: </strong>{{ colaborador.profissao }}</p>
+                <strong>Endereço: </strong>{{ colaborador.endereco }}</p>
+                <strong>Contato:</strong> {{ colaborador.contato }}</p>
+                <strong>Data do Termo:</strong> {{ colaborador.data_do_termo }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

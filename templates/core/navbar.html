@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="container">
+      <ul class="navbar-nav mr-auto">
+        <a class="navbar-brand" href="{% url 'core:index' %}">Museu</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Consultar Acervo</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-toggle="modal" href="#searchModal">Pesquisar Material</a></li>
+            <li><a class="dropdown-item" href="{% url 'catalogo:materiais' %}">Ver Todo o Acervo</a></li>
+            <li><a class="dropdown-item" href="{% url 'catalogo:colaboradores' %}">Colaborador</a></li>
+            <li><a class="dropdown-item" href="{% url 'catalogo:tipodeentrada' %}">Tido de Entrada</a>
+            <li><a class="dropdown-item" href="{% url 'catalogo:tipodeartefato' %}">Tipo de Artefato</a>
+            <li><a class="dropdown-item" href="{% url 'catalogo:ambientes' %}">Ambiente</a>
+            <li><a class="dropdown-item" href="{% url 'catalogo:artistas' %}">Artista</a>
+          </ul>
+        </li>
+        {% if user.is_staff == True %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:administracao' %}">Administração</a>
+          </li>
+        {% endif %}
+      </ul>
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+        <a class="nav-link" href="/admin/logout/?next=/">Sair</a>
+        {% else %}
+        <a class="nav-link" href="/admin/login/?next=/">Entrar</a>
+        {% endif %}
+      </ul>
+  </div>
+</nav>

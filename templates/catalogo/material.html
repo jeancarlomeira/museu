@@ -1,0 +1,132 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Relação de Materiais | {{ block.super }}
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container-fluid">
+  <div class="container p-3 my-3 border">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="card">
+          <img src={{ material.image }} class="img-fluid" alt="Responsive image" width="250" height="180">
+        </div>
+      </div>
+      <div class="col-sm-5">
+        </p>
+        UNIVERSIDADE FEDERAL DE CAMPINA GRANDE</P>
+        CENTRO DE EDUCAÇÃO E SAÚDE</P>
+        MUSEU DO HOMEM DO CURIMATAÚ
+      </div>
+      <div class="col-sm-5 align-self-center text-center">
+        <div class="card">
+          <h4><strong>FICHA CATALOGRÁFICA</strong></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <strong>Tombamento e Controle</strong>
+          </div>
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-sm">
+        <tbody>
+          <tr>
+            <td>
+                <strong>Código de Registro:</strong> {{ material.codigo_registro }}</p>
+                <strong>Tipo de Entrada: </strong>{{ material.tipo_de_entrada }}</p>
+                <strong>Tipo de Artefato: </strong>{{ material.tipo_de_artefato }}</p>
+                <strong>Ambiente: </strong>{{ material.ambiente }}
+            </td>
+            <td>
+              <strong>Colaborador: </strong>{{ material.colaborador }}</p>
+              <button type="button" class="btn btn-info" data-toggle="modal" href="#colaboradorModal">Mais Informações</button>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="card">
+        <strong>Detalhes</strong>
+          </div>
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-sm">
+        <tbody>
+          <tr>
+            <td>
+              <center>
+                <img src=https://pbs.twimg.com/profile_images/1081149776404590592/REI4-FCq_400x400.jpg class="img-fluid" alt="Responsive image" width="150" height="140">
+              </center>
+            </td>
+            <td colspan="2">
+              <strong>Título:</strong> {{ material.titulo }}</p>
+              <strong>Artista: </strong>{{ material.artista }} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" href="#artistaModal">Mais...</button></p>
+              <strong>Descrição: </strong>{{ material.descricao }}</p>
+              <strong>Procedência: </strong>{{ material.procedencia }}
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Altura:</strong> {{ material.altura }} cm</p>
+              <strong>Largura: </strong>{{ material.largura }} cm</p>
+            </td>
+            <td>
+              <strong>Data da conclusão da peça:</strong> {{ material.data_da_conclusao }}</p>
+              <strong>Local: </strong>{{ material.local }}</p>
+            </td>
+            <td>
+              <strong>Outros:</strong> {{ material.outras }}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="col-sm-12">
+      <div class="card">
+        <strong>Detalhes II</strong>
+          </div>
+    </div>
+    <div class="col-sm-12">
+      <table class="table table-bordered table-sm">
+        <tbody>
+          <tr>
+            <td>
+              <strong>Técnica: </strong>{{ material.tecnica }}</p>
+              <strong>Suporte: </strong>{{ material.suporte }}</p>
+              <strong>Moldura: </strong>{{ material.moldura }}</p>
+              <strong>Valor Estimado Original: </strong>R$ {{ material.valor_estimado_original }}</p>
+              <strong>Último Valor Estimado: </strong>R$ {{ material.ultimo_valor_estimado }}</p>
+              <strong>Data do Último Valor Estimado: </strong>{{ material.data_ultimo_valor_estimado }}</p>
+            </td>
+            <td>
+              <strong>Posição da Assinatura: </strong>{{ material.posicao_assinatura }}</p>
+              <strong>Histórico do Artefato: </strong>{{ material.historico_do_artefato }}</p>
+              <strong>Coletor: </strong>{{ material.coletor }}</p>
+              <strong>Data da Catalogação: </strong>{{ material.data_da_catalogacao }}</p>
+              <strong>Catalogador: </strong>{{ material.catalogador }}</p>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}
