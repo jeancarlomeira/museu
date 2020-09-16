@@ -4,7 +4,7 @@ from django.forms.models import ModelForm
 
 
 class Material(models.Model):
-    codigo_registro = models.CharField('Código Registro', max_length=7, blank=False, unique=True)
+    codigo_registro = models.CharField('Código Registro', max_length=8, blank=False, unique=True)
     tipo_de_entrada = models.ForeignKey('catalogo.TipodeEntrada', verbose_name='Entradas', on_delete=models.PROTECT)
     tipo_de_artefato = models.ForeignKey('catalogo.TipodeArtefato', verbose_name='Artefatos', on_delete=models.PROTECT)
     ambiente = models.ForeignKey('catalogo.Ambiente', verbose_name='Ambientes', on_delete=models.PROTECT)
